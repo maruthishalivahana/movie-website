@@ -13,6 +13,9 @@ function Movies() {
                 <Moviecard />
                 <Moviecard />
                 <Moviecard />
+                <Moviecard />
+                <Moviecard />
+                <Moviecard />
             </div>
         </>
 
