@@ -3,7 +3,7 @@ import banner from '../assets/banner.jpg'
 import { Link } from 'react-router'
 import { useNavigate } from 'react-router'
 import MovieDetailsCard from './MovieDetailsCard';
-function Moviecard() {
+function Moviecard(props) {
 
     const navigate = useNavigate();
     const handleViewDetails = () => {
