@@ -1,6 +1,15 @@
 import React from 'react'
 import banner from '../assets/banner.jpg'
-function Moviecard(props) {
+import { Link } from 'react-router'
+import { useNavigate } from 'react-router'
+import MovieDetailsCard from './MovieDetailsCard';
+function Moviecard() {
+
+    const navigate = useNavigate();
+    const handleViewDetails = () => {
+        navigate('/moviedetails');
+        <MovieDetailsCard />
+    }
     return (
         <>
 
@@ -8,7 +17,7 @@ function Moviecard(props) {
                 <img style={{ backgroundImage: `url(https://image.tmdb.org/t/p/oiginal/${props.backdrop_path})` }} alt={props.original_title}
                     className='w-[200px] h-[400px] rounded' />
                 <p className=' relative bottom-[50px] top-0.3  text-center text-amber-50 bg-gray-800 h-10' >{props.original_title}</p>
-                <button className='text center bg-black p-2 text-white rounded-2xl cursor-pointer'>view details</button>
+                <button path="/moviedetails" className='text center bg-black p-2 text-white rounded-2xl cursor-pointer' onClick={handleViewDetails}>view details</button>
             </div>
         </>
     )

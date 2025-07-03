@@ -2,12 +2,12 @@ import React from 'react'
 import Banner from './Banner'
 import Moviecard from './Moviecard'
 import axios from 'axios'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 function Movies() {
 
     const API_KEY = "913bb054a3e666b34c09d1f50d7c5139"
-    const [movies, setMovies] = React.useState([])
+    const [movies, setMovies] = useState([])
     useEffect(() => {
 
         axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`).then((res) => {
