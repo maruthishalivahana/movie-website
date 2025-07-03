@@ -1,9 +1,10 @@
 import React from 'react'
+import MovieDetailsCard from './MovieDetailsCard'
 
 function Watchlist() {
     return (
         <div>
-            hello from watchlist
+            <MovieDetailsCard />
 
         </div>
     )
