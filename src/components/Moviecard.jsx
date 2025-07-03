@@ -5,9 +5,10 @@ function Moviecard(props) {
         <>
 
             <div className='flex  justify-around flex-col  w-[200px] h-[350px]  rounded bg-amber-50 mt-15 ml-10 mb-10 mr-10'>
-                <img style={{ backgroundImage: `url(https://image.tmdb.org/t/p/oiginal/${props.poster_path})` }} alt={props.original_title}
+                <img style={{ backgroundImage: `url(https://image.tmdb.org/t/p/oiginal/${props.backdrop_path})` }} alt={props.original_title}
                     className='w-[200px] h-[400px] rounded' />
-                <p className=' relative bottom-[50px] top-0.3  text-center text-amber-50 bg-black h-10' >{props.original_title}</p>
+                <p className=' relative bottom-[50px] top-0.3  text-center text-amber-50 bg-gray-800 h-10' >{props.original_title}</p>
+                <button className='text center bg-black p-2 text-white rounded-2xl cursor-pointer'>view details</button>
             </div>
         </>
     )
