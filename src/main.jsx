@@ -15,7 +15,7 @@ createRoot(document.getElementById('root')).render(
     <Routes>
       <Route path='/' element={<Movies />} className='text-blue-500'>Home</Route>
       <Route path='/watchlist' element={<Watchlist />} className=' text-blue-500'>Watchlist</Route>
-      <Route path='/moviedetails' element={<MovieDetailsCard />} className='text-blue-500'>Movie Details</Route>
+      <Route path='/moviedetails/:id' element={<MovieDetailsCard />} className='text-blue-500'>Movie Details</Route>
     </Routes>
   </Router>
 )

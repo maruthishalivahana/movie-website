@@ -7,8 +7,8 @@ function Moviecard(props) {
 
     const navigate = useNavigate();
     const handleViewDetails = () => {
-        navigate('/moviedetails');
-        <MovieDetailsCard />
+        navigate(`/moviedetails/${props.id}`);
+        return <MovieDetailsCard />
     }
     return (
         <>

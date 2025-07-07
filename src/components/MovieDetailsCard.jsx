@@ -1,9 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router'
-import Movies from './Movies'
+import Moviecard from './Moviecard'
 
-function MovieDetailsCard(props) {
 
+function MovieDetailsCard() {
     return (
         <>
             <div className='flex mt-10 ml-20 gap-11 justify-evenly items-center flex-wrap'>
