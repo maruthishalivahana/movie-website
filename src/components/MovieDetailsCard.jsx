@@ -1,9 +1,9 @@
 import React from 'react'
-import { useNavigate } from 'react-router'
-import Moviecard from './Moviecard'
-
-
-function MovieDetailsCard() {
+import moviecard from './Moviecard'
+import { useState } from 'react'
+import axios from 'axios'
+import { useEffect } from 'react'
+function MovieDetailsCard(props) {
     return (
         <>
             <div className='flex mt-10 ml-20 gap-11 justify-evenly items-center flex-wrap'>
@@ -13,10 +13,10 @@ function MovieDetailsCard() {
 
                 <div>
 
-                    <p className='bg-black p-4 rounded-2xl text-white w-[300px] text-center '>KUBERA</p>
+                    <p className='bg-black p-4 rounded-2xl text-white w-[300px] text-center '>{props.original_title}</p>
                     <div className='bg-black flex flex-col text-white p-4 mt-10 w[400px] rounded-2xl'>
                         <p className='text-2xl mt-5 text-center mb-4 underline '>OVERVIEW</p>
-                        <p className='text-lg w-3xl '>Kubera is a 2023 Indian Tamil-language action thriller film written and directed by N. Kalyanakrishnan. The film stars Prabhu Deva, Amala Paul, and Samyuktha Hegde in lead roles, with Prakash Raj, Sathyaraj, and others in supporting roles. The film's music is composed by Yuvan Shankar Raja.</p>
+                        <p className='text-lg w-3xl '>{props.overview}</p>
                     </div>
                     <div className='flex gap-5 items-center'>
                         <div className='releaseDate bg-black p-2  mt-10 rounded-2xl text-white w-[200px] text-center'>
