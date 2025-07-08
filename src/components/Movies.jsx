@@ -24,7 +24,15 @@ function Movies() {
             <h1 className='text-center text-3xl mt-15'> Trending Movies</h1>
             <div className='mt-10 flex items-center justify-around  flex-wrap '>
                 {movies.map((movie) => {
-                    return <Moviecard poster_path={movie.backdrop_path} original_title={movie.original_title} name={movie.original_title} key={movie.id} />
+                    return <Moviecard
+                        key={movie.id}
+                        original_title={movie.original_title}
+                        overview={movie.overview}
+                        backdrop_path={movie.backdrop_path}
+                        release_date={movie.release_date}
+                        popularity={movie.popularity}
+                        vote_average={movie.vote_average}
+                        poster_path={movie.poster_path} />
                 })}
 
             </div>
