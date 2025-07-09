@@ -3,10 +3,18 @@ import MovieDetailsCard from './MovieDetailsCard'
 
 function Watchlist() {
     return (
-        <div>
-            <MovieDetailsCard />
+        <>
+            <table>
+                <thead className='flex items-center justify-around'>
+                    <th>
+                        <td>name</td>
+                        <td>rating</td>
+                        <td>popularity</td>
 
-        </div>
+                    </th>
+                </thead>
+            </table>
+        </>
     )
 }
 
