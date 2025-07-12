@@ -24,9 +24,9 @@ function Moviecard(props) {
                         className='w-[200px] h-[200px] rounded' />
                     <p className=' relative bottom-[50px] top-0.3  text-center text-amber-50 bg-gray-800 h-10' >{props.original_title}</p>
                 </div>
-                <div className='flex gap-4'>
+                <div className='flex flex-col  gap-4'>
                     <button path="/moviedetails" className='text center bg-black p-2 text-white rounded-2xl cursor-pointer' onClick={handleViewDetails}>view details</button>
-                    <button className='text center bg-black p-2 text-white rounded-2xl cursor-pointer'>Add To Watchlist</button>
+                    {/* <button className='text center bg-black p-2 text-white rounded-2xl cursor-pointer'>Add To Watchlist</button> */}
                 </div>
             </div>
         </>

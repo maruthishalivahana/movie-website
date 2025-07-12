@@ -4,7 +4,7 @@ import Moviecard from './Moviecard'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
-function Movies({ handleAddToWatchlist }) {
+function Movies() {
 
     const API_KEY = "913bb054a3e666b34c09d1f50d7c5139"
     const [movies, setMovies] = useState([])
@@ -25,7 +25,6 @@ function Movies({ handleAddToWatchlist }) {
             <div className='mt-10 flex items-center justify-around  flex-wrap '>
                 {movies.map((movie) => {
                     return <Moviecard
-                        handleAddToWatchlist={handleAddToWatchlist}
                         key={movie.id}
                         original_title={movie.original_title}
                         overview={movie.overview}
