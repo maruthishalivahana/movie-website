@@ -6,7 +6,7 @@ import axios from 'axios'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
-function MovieDetailsCard(props) {
+function MovieDetailsCard() {
 
     const { state } = useLocation();
 
