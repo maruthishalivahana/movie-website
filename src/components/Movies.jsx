@@ -13,7 +13,7 @@ function Movies() {
     const [movies, setMovies] = useState([])
     useEffect(() => {
 
-        axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`).then((res) => {
+        axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=3`).then((res) => {
             setMovies(res.data.results)
             console.log(res.data.results)
         })
