@@ -1,7 +1,7 @@
-import { useState } from 'react'
+
 import React from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
 import Watchlist from './components/Watchlist.jsx'
 import Navbar from './components/Navbar.jsx'
@@ -16,6 +16,7 @@ function App() {
             <Router>
 
                 <WatchlistProvider >
+                    <ToastContainer />
                     <Navbar />
                     <Routes>
                         <Route path='/' element={<Movies />} />

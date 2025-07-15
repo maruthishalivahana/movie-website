@@ -5,6 +5,7 @@ import axios from 'axios'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useWatchlist } from '../../WatchlistContext'
+import { toast } from 'react-toastify';
 
 function MovieDetailsCard() {
     const location = useLocation();
@@ -13,7 +14,16 @@ function MovieDetailsCard() {
     const { state } = useLocation();
     const handleClick = () => {
         addToWatchlist(movie)
-        alert(`${movie.original_title} has been added to your watchlist!`)
+        toast.success(`${movie.original_title} has been added to your watchlist!`, {
+            position: "top-right",
+            autoClose: 3000,
+            // hideProgressBar: false,
+            // closeOnClick: true,
+            // pauseOnHover: true,
+            // draggable: true,
+            // progress: undefined,
+        });
+        // alert(`${movie.original_title} has been added to your watchlist!`)
     }
 
     const {

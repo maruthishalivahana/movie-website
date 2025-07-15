@@ -1,8 +1,18 @@
 import React from 'react'
 import MovieDetailsCard from './MovieDetailsCard'
 import { useWatchlist } from '../../WatchlistContext'
+import { toast } from 'react-toastify';
 function Watchlist() {
     const { watchlist, removeFromWatchlist } = useWatchlist();
+
+    const handleRemoveFromWatchlist = () => {
+        removeFromWatchlist(movie.id);
+        toast.error(`${movie.original_title} has been removed from your watchlist!`), {
+            position: "top-right",
+            autoclose: 3000
+        }
+
+    }
     return (
         <>
 
@@ -35,7 +45,13 @@ function Watchlist() {
                                 </button>
 
                                 <button
-                                    onClick={() => removeFromWatchlist(movie.id)}
+                                    onClick={() => {
+                                        removeFromWatchlist(movie.id);
+                                        toast.error(`${movie.original_title} has been removed from your watchlist!`), {
+                                            position: "top-right",
+                                            autoclose: 1000
+                                        }
+                                    }}
                                     className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600"
                                 >
                                     Remove
