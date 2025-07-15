@@ -2,13 +2,19 @@ import React from 'react'
 import moviecard from './Moviecard'
 import { useState } from 'react'
 import axios from 'axios'
-
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import { useWatchlist } from '../../WatchlistContext'
 
 function MovieDetailsCard() {
-
+    const location = useLocation();
+    const movie = location.state;
+    const { addToWatchlist } = useWatchlist();
     const { state } = useLocation();
+    const handleClick = () => {
+        addToWatchlist(movie)
+        alert(`${movie.original_title} has been added to your watchlist!`)
+    }
 
     const {
         original_title,
@@ -48,7 +54,7 @@ function MovieDetailsCard() {
                             <p>{Math.round(vote_average)}/10</p>
                         </div>
                     </div>
-                    <button className='p-4 bg-black text-white mt-10 w-[400px] hover:cursor-pointer '>Add To Watchlist</button>
+                    <button className='p-4 bg-black text-white mt-10 w-[400px] hover:cursor-pointer ' onClick={() => { handleClick() }}>Add To Watchlist</button>
                 </div>
             </div>
         </>

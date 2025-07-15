@@ -1,5 +1,7 @@
 import React from 'react'
 import Banner from './Banner'
+import { useParams } from 'react-router-dom'
+import { useWatchlist } from '../../WatchlistContext.jsx'
 import Moviecard from './Moviecard'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
@@ -7,12 +9,13 @@ import { useEffect, useState } from 'react'
 function Movies() {
 
     const API_KEY = "913bb054a3e666b34c09d1f50d7c5139"
+    const { id } = useParams();
     const [movies, setMovies] = useState([])
     useEffect(() => {
 
         axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`).then((res) => {
             setMovies(res.data.results)
-            // console.log(res.data.results)
+            console.log(res.data.results)
         })
     }, [])
 
@@ -26,13 +29,16 @@ function Movies() {
                 {movies.map((movie) => {
                     return <Moviecard
                         key={movie.id}
+                        movie={movie}
                         original_title={movie.original_title}
                         overview={movie.overview}
                         backdrop_path={movie.backdrop_path}
                         release_date={movie.release_date}
                         popularity={movie.popularity}
                         vote_average={movie.vote_average}
-                        poster_path={movie.poster_path} />
+                        poster_path={movie.poster_path}
+                        id={movie.id} />
+
                 })}
 
             </div>

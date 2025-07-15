@@ -1,6 +1,7 @@
 import { createContext, useState, useContext } from "react";
+import React from "react";
 const WatchlistContext = createContext();
-export const WatchlistProvider = () => {
+export const WatchlistProvider = ({ children }) => {
     const [watchlist, setWatchlist] = useState([]);
 
     const addToWatchlist = (movie) => {
