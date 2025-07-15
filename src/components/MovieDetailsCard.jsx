@@ -48,7 +48,7 @@ function MovieDetailsCard() {
                             <p>{Math.round(vote_average)}/10</p>
                         </div>
                     </div>
-                    <button className='p-4 bg-black text-white mt-10 w-[400px]'>Add To Watchlist</button>
+                    <button className='p-4 bg-black text-white mt-10 w-[400px] hover:cursor-pointer '>Add To Watchlist</button>
                 </div>
             </div>
         </>
