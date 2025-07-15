@@ -47,8 +47,8 @@ function Watchlist() {
                                 <button
                                     onClick={() => {
                                         removeFromWatchlist(movie.id);
-                                        toast.error(`${movie.original_title} has been removed from your watchlist!`), {
-                                            position: "top-right",
+                                        toast.info(`${movie.original_title} has been removed from your watchlist!`), {
+                                            position: "top-center",
                                             autoclose: 1000
                                         }
                                     }}
