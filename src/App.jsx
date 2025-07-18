@@ -9,6 +9,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router";
 import Movies from './components/Movies.jsx'
 import MovieDetailsCard from './components/MovieDetailsCard.jsx'
 import { WatchlistProvider } from '../WatchlistContext.jsx'
+import Recommendation from './components/Recommendation.jsx';
+
 function App() {
 
     return (
@@ -24,6 +26,7 @@ function App() {
                         <Route path='/moviedetails' element={<MovieDetailsCard />} />
                     </Routes>
                 </WatchlistProvider>
+                <Recommendation />
 
             </Router>
         </>
