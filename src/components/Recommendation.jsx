@@ -14,6 +14,9 @@ function Recommendation() {
             }).then((res) => {
                 const data = (res.data.results)
                 const topMovies = []
+
+                //  logic for filtering top movies by using for loop 
+
                 /* for (let i = 0; i < data.length; i++) {
                      if (data[i].vote_average > 8) {
                          topMovies.push(data[i]);
