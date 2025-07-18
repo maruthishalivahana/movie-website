@@ -1,10 +1,5 @@
 import React, { Children, use } from 'react'
-import banner from '../assets/banner.jpg'
-import { Link } from 'react-router'
 import { useNavigate } from 'react-router'
-import { useState, useEffect } from 'react'
-import axios from 'axios';
-import MovieDetailsCard from './MovieDetailsCard';
 function Moviecard(props) {
     const navigate = useNavigate();
     const handleViewDetails = () => {
