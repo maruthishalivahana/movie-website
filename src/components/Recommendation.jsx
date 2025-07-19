@@ -6,25 +6,9 @@ function Recommendation() {
     const API_KEY = "913bb054a3e666b34c09d1f50d7c5139";
     useEffect(() => {
         try {
-            axios.get(`https://api.themoviedb.org/3/movie/500/recommendations?api_key=${API_KEY}&language=en-US&page=1`, {
-                // headers: {
-                //     accept: 'application/json',
-                //     Authorization: `Bearer ${API_KEY}`
-                // }
-            }).then((res) => {
+            axios.get(`https://api.themoviedb.org/3/movie/500/recommendations?api_key=${API_KEY}&language=en-US&page=1`).then((res) => {
                 const data = (res.data.results)
                 const topMovies = []
-
-                //  logic for filtering top movies by using for loop 
-
-                /* for (let i = 0; i < data.length; i++) {
-                     if (data[i].vote_average > 8) {
-                         topMovies.push(data[i]);
- 
-                     }
- 
-                 }*/
-
                 data.filter((movie) => {
                     movie.vote_average > 8 && topMovies.push(movie)
 
@@ -40,8 +24,6 @@ function Recommendation() {
     }, [])
 
     // Logic to fetch recommendations based on user's watchlist or preferences      
-
-
     return (
         <div>
 

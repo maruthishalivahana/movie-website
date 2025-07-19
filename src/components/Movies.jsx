@@ -5,6 +5,7 @@ import { useWatchlist } from '../../WatchlistContext.jsx'
 import Moviecard from './Moviecard'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import RecommendationCard from './RecommendationCard.jsx'
 
 function Movies() {
 
@@ -23,6 +24,10 @@ function Movies() {
         <>
             <div>
                 <Banner />
+            </div>
+            <div>
+                <h1 className='text-3xl text-center mt-10'> Top Recommndations</h1>
+                <RecommendationCard />
             </div>
             <h1 className='text-center text-3xl mt-15'> Trending Movies</h1>
             <div className='mt-10 flex items-center justify-around  flex-wrap '>
