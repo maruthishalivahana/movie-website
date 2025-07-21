@@ -6,6 +6,7 @@ import Moviecard from './Moviecard'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import RecommendationCard from './RecommendationCard.jsx'
+import Recommendation from './Recommendation.jsx'
 
 function Movies() {
 
@@ -14,7 +15,7 @@ function Movies() {
     const [movies, setMovies] = useState([])
     useEffect(() => {
 
-        axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=3`).then((res) => {
+        axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`).then((res) => {
             setMovies(res.data.results)
             console.log(res.data.results)
         })
@@ -25,9 +26,9 @@ function Movies() {
             <div>
                 <Banner />
             </div>
-            <div>
-                <h1 className='text-3xl text-center mt-10'> Top Recommndations</h1>
-                <RecommendationCard />
+            <h1 className='text-3xl text-center mt-10'> Top Recommndations</h1>
+            <div className=' flex items-center gap-10 justify-evenly'>
+                <Recommendation />
             </div>
             <h1 className='text-center text-3xl mt-15'> Trending Movies</h1>
             <div className='mt-10 flex items-center justify-around  flex-wrap '>
