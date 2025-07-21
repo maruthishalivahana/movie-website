@@ -23,6 +23,8 @@ function Movies() {
     }, [])
 
 
+    // for fetching recommnedations data 
+
     useEffect(() => {
         try {
             axios.get(`https://api.themoviedb.org/3/movie/500/recommendations?api_key=${API_KEY}&language=en-US&page=1`).then((res) => {
